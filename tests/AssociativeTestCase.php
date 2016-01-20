@@ -41,6 +41,9 @@ class AssociativeTestCase extends PHPUnit_Framework_TestCase
         $this->assertEquals($a_bc->output(), $c_ab->output());
     }
 
+    /**
+     * Proves that (A * (B * C)) = (A * B)
+     */
     public function testReducedMultiplication()
     {
         $bc = new Qand($this->b, $this->c);
