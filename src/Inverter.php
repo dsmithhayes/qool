@@ -2,6 +2,9 @@
 
 namespace Qool;
 
+/**
+ * @author Dave Smith-Hayes <me@davesmith-hayes.com>
+ */
 abstract class Inverter
 {
     /**

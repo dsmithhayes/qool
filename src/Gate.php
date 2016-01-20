@@ -2,6 +2,12 @@
 
 namespace Qool;
 
+/**
+ * Essentially every object in this library is a type of gate. The only thing
+ * I don't consider to be a gate is the inverter, its a single input device.
+ *
+ * @author Dave Smith-Hayes <me@davesmith-hayes.com>
+ */
 abstract class Gate
 {
     /**
