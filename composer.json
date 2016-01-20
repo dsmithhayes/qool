@@ -1,0 +1,18 @@
+{
+    "name": "dsmithhayes/qool",
+    "description": "A really stupid boolean logic library.",
+    "type": "Library",
+    "require-dev": {
+        "phpunit/phpunit": "^5.1"
+    },
+    "license": "BSD 3.0",
+    "authors": [
+        {
+            "name": "Dave Smith-Hayes",
+            "email": "dsmithhayes@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0"
+    }
+}
