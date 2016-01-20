@@ -3,9 +3,9 @@
 namespace Qool\Gate;
 
 use Qool\Inverter;
-use Qool\Gate\Qand;
+use Qool\Gate\Qor;
 
-class Qnand extends Qand
+class Qnor extends Qor
 {
     public function output(): bool
     {

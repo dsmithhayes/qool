@@ -24,6 +24,15 @@ abstract class Gate
     protected $b;
 
     /**
+     *
+     */
+    public function __construct($a, $b)
+    {
+        $this->a = $a;
+        $this->b = $b;
+    }
+
+    /**
      * Ideally every Gate will have an 'a', and 'b' input.
      *
      * @param mixed $a
@@ -38,9 +47,13 @@ abstract class Gate
     }
 
     /**
-     * The output is going to be a high or low result of what's set
+     * The output is going to be a high or low result of what's set, by default
+     * it is low because active low is a thing.
      *
      * @return bool
      */
-    public function output(): bool;
+    public function output(): bool
+    {
+        return false;
+    }
 }

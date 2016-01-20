@@ -14,7 +14,7 @@ class Qand extends Gate
      * @return bool
      *      True if both 'a' and 'b' are true
      */
-    public function ouput(): bool
+    public function output(): bool
     {
         return (bool)($this->a && $this->b);
     }
