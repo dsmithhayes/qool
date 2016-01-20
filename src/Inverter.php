@@ -13,8 +13,8 @@ abstract class Inverter
      * @return bool
      *      Reversed state of the input
      */
-    public static function invert($a)
+    public static function invert($a): bool
     {
-        return !$a;
+        return (bool)!$a;
     }
 }
