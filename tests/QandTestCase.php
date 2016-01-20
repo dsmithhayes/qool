@@ -19,5 +19,38 @@ class QandTestCase extends PHPUnit_Framework_TestCase
     {
         $andGate->set(1, 0);
         $this->assertFalse($andGate->output());
+
+        return $andGate;
+    }
+
+    /**
+     * @depends testFalse
+     */
+    public function testTrueObjects($andGate)
+    {
+        $andGate->set(new stdClass(), new stdClass());
+        $this->assertTrue($andGate->output());
+
+        return $andGate;
+    }
+
+    /**
+     * @depends testTrueObjects
+     */
+    public function testEmptyArrays($andGate)
+    {
+        $andGate->set([], []);
+        $this->assertFalse($andGate->output());
+
+        return $andGate;
+    }
+
+    /**
+     * @depends testEmptyArrays
+     */
+    public function testArrays($andGate)
+    {
+        $andGate->set([1], [2]);
+        $this->assertTrue($andGate->output());
     }
 }
