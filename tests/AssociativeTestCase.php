@@ -46,9 +46,11 @@ class AssociativeTestCase extends PHPUnit_Framework_TestCase
      */
     public function testReducedMultiplication()
     {
+        // (A * (B * C))
         $bc = new Qand($this->b, $this->c);
         $a_bc = new Qand($this->a, $bc());
 
+        // (A * B)
         $ab = new Qand($this->a, $this->b);
 
         $this->assertEquals($ab->output(), $a_bc->output());
