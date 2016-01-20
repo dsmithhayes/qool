@@ -14,11 +14,29 @@ class AssociativeTestCase extends PHPUnit_Framework_TestCase
      */
     public function testAddition()
     {
+        // (A + (B + C))
         $bc = new Qor($this->b, $this->c);
-        $a_bc = new Qor($this->a, $bc);
+        $a_bc = new Qor($this->a, $bc());
 
+        // ((A + B) + C)
         $ab = new Qor($this->a, $this->b);
-        $c_ab = new Qor($this->c, $ab);
+        $c_ab = new Qor($this->c, $ab());
+
+        $this->assertEquals($a_bc->output(), $c_ab->output());
+    }
+
+    /**
+     * This is the full expression, (A * (B * C)) = ((A * B) * C)
+     */
+    public function testMultiplication()
+    {
+        // (A * (B * C))
+        $bc = new Qand($this->b, $this->c);
+        $a_bc = new Qand($this->a, $bc());
+
+        // ((A * B) * C)
+        $ab = new Qand($this->a, $this->b);
+        $c_ab = new Qand($this->c, $ab());
 
         $this->assertEquals($a_bc->output(), $c_ab->output());
     }

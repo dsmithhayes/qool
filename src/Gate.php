@@ -33,6 +33,14 @@ abstract class Gate
     }
 
     /**
+     * Calling the class itself will just return the output of the gate
+     */
+    public function __invoke()
+    {
+        return $this->output();
+    }
+
+    /**
      * Ideally every Gate will have an 'a', and 'b' input.
      *
      * @param mixed $a
