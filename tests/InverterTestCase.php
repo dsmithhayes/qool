@@ -45,13 +45,25 @@ class InverterTestCase extends PHPUnit_Framework_TestCase
         $this->assertFalse(Inverter::invert(0.1));
     }
 
-    public function testArray()
+    /**
+     * I feel this this should make sense, an empty array should be false.
+     */
+    public function testEmptyArray()
     {
         $this->assertTrue(Inverter::invert([]));
     }
 
     /**
-     * Negated objects are always false!
+     * Tests an array with a value in it, should return false when negated
+     */
+    public function testArray()
+    {
+        $this->assertFalse(Inverter::invert([1]));
+    }
+
+    /**
+     * Negated objects are always false! This means that objects are true in
+     * nature. I guess that's right, even if they are empty...
      */
     public function testObject()
     {
