@@ -40,15 +40,20 @@ class InverterTestCase extends PHPUnit_Framework_TestCase
     /**
      * Negated floats are false, also!
      */
-    public function testFloatInverter()
+    public function testFloat()
     {
         $this->assertFalse(Inverter::invert(0.1));
+    }
+
+    public function testArray()
+    {
+        $this->assertTrue(Inverter::invert([]));
     }
 
     /**
      * Negated objects are always false!
      */
-    public function testObjectInverter()
+    public function testObject()
     {
         $this->assertFalse(Inverter::invert(new stdClass()));
     }
