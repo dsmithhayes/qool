@@ -48,6 +48,17 @@ class QandTestCase extends PHPUnit_Framework_TestCase
     /**
      * @depends testEmptyArrays
      */
+    public function testHalfEmptyArrays($andGate)
+    {
+        $andGate->set([], [1]);
+        $this->assertFalse($andGate->output());
+
+        return $andGate;
+    }
+
+    /**
+     * @depends testHalfEmptyArrays
+     */
     public function testArrays($andGate)
     {
         $andGate->set([1], [2]);
