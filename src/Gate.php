@@ -24,12 +24,11 @@ abstract class Gate
     protected $b;
 
     /**
-     *
+     * Constructor will set the gate's input
      */
-    public function __construct($a, $b)
+    public function __construct($a = 0, $b = 0)
     {
-        $this->a = $a;
-        $this->b = $b;
+        $this->set($a, $b);
     }
 
     /**
@@ -50,8 +49,8 @@ abstract class Gate
      */
     public function set($a, $b)
     {
-        $this->a = $a;
-        $this->b = $b;
+        $this->a = (bool)$a;
+        $this->b = (bool)$b;
     }
 
     /**

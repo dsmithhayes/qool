@@ -63,5 +63,17 @@ class QandTestCase extends PHPUnit_Framework_TestCase
     {
         $andGate->set([1], [2]);
         $this->assertTrue($andGate->output());
+
+        return $andGate;
+    }
+
+    /**
+     * @depends testArrays
+     */
+    public function testInvokable($andGate)
+    {
+        $this->assertTrue($andGate());
+
+        return $andGate;
     }
 }
