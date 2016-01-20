@@ -42,7 +42,7 @@ class AssociativeTestCase extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Proves that (A * (B * C)) = (A * B)
+     * Proves that (A * (B * C)) = (A * B), which is the same as above
      */
     public function testReducedMultiplication()
     {
