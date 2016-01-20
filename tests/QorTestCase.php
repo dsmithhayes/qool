@@ -11,4 +11,15 @@ class QorTestCase extends PHPUnit_Framework_TestCase
         
         return $orGate;
     }
+
+    /**
+     * @depends testTrueConstruction
+     */
+    public function testFalse($orGate)
+    {
+        $orGate->set(0, 0);
+        $this->assertFalse($orGate->output());
+
+        return $orGate;
+    }
 }
