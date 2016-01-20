@@ -19,6 +19,9 @@ class CommutativeTestCase extends PHPUnit_Framework_TestCase
         $this->assertEquals($c->output(), $d->output());
     }
 
+    /**
+     * This law shos that (A * B) = (B * A)
+     */
     public function testCaseMultiplication()
     {
         $c = new Qand($this->a, $this->b);
