@@ -54,13 +54,9 @@ abstract class Gate
     }
 
     /**
-     * The output is going to be a high or low result of what's set, by default
-     * it is low because active low is a thing.
+     * I don't feel like I need to justify what this method is supposed to do.
      *
      * @return bool
      */
-    public function output(): bool
-    {
-        return false;
-    }
+    abstract public function output(): bool;
 }
