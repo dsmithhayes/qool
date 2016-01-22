@@ -11,6 +11,10 @@ class QnandTestCase extends PHPUnit_Framework_TestCase
             [1, 0, 1],
             [0, 1, 1],
             [1, 1, 0],
+            [new stdClass(), new stdClass(), 0],
+            [null, null, 1],
+            [[], [], 1],
+            [[1], [1], 0]
         ];
     }
 
