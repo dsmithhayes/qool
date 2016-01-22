@@ -27,7 +27,7 @@ class QandTestCase extends PHPUnit_Framework_TestCase
      */
     public function testTruthTable($a, $b, $expected)
     {
-        $qandGate = new Qand($a, $b);
-        $this->assertEquals($expected, $qandGate());
+        $andGate = new Qand($a, $b);
+        $this->assertEquals($expected, $andGate());
     }
 }
