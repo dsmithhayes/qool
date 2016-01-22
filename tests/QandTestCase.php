@@ -11,8 +11,8 @@ class QandTestCase extends PHPUnit_Framework_TestCase
             '1 + 0 = 1' => [1, 0, 0],
             '1 + 1 = 1' => [1, 1, 1],
 
-            'One instanciated class' => [new stdClass(), 0, 0],
-            'Two instanciated class' => [new stdClass(), new stdClass(), 1],
+            'One objects' => [new stdClass(), 0, 0],
+            'Two objects' => [new stdClass(), new stdClass(), 1],
             'Two nulls' => [null, null, 0],
             'Null and 1' => [null, 1, 0],
 
