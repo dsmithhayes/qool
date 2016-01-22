@@ -17,7 +17,7 @@ class QnandTestCase extends PHPUnit_Framework_TestCase
     /**
      * @dataProvider truthTableProvider
      */
-    public function testQnandTrue($a, $b, $expected)
+    public function testTruthTable($a, $b, $expected)
     {
         $qnandGate = new Qnand($a, $b);
         $this->assertEquals($expected, $qnandGate());

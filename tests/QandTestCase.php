@@ -4,76 +4,26 @@ use Qool\Gate\Qand;
 
 class QandTestCase extends PHPUnit_Framework_TestCase
 {
-    public function testTrueConstruction()
+    public function truthTableProvider()
     {
-        $andGate = new Qand(1, 1);
-        $this->assertTrue($andGate->output());
-
-        return $andGate;
+        return [
+            [0, 0, 0],
+            [1, 0, 0],
+            [0, 1, 0],
+            [1, 1, 1],
+            [new stdClass(), new stdClass(), 1],
+            [null, null, 0],
+            [[], [], 0],
+            [[1], [1], 1]
+        ];
     }
 
     /**
-     * @depends testTrueConstruction
+     * @dataProvider truthTableProvider
      */
-    public function testFalse($andGate)
+    public function testTruthTable($a, $b, $expected)
     {
-        $andGate->set(1, 0);
-        $this->assertFalse($andGate->output());
-
-        return $andGate;
-    }
-
-    /**
-     * @depends testFalse
-     */
-    public function testTrueObjects($andGate)
-    {
-        $andGate->set(new stdClass(), new stdClass());
-        $this->assertTrue($andGate->output());
-
-        return $andGate;
-    }
-
-    /**
-     * @depends testTrueObjects
-     */
-    public function testEmptyArrays($andGate)
-    {
-        $andGate->set([], []);
-        $this->assertFalse($andGate->output());
-
-        return $andGate;
-    }
-
-    /**
-     * @depends testEmptyArrays
-     */
-    public function testHalfEmptyArrays($andGate)
-    {
-        $andGate->set([], [1]);
-        $this->assertFalse($andGate->output());
-
-        return $andGate;
-    }
-
-    /**
-     * @depends testHalfEmptyArrays
-     */
-    public function testArrays($andGate)
-    {
-        $andGate->set([1], [2]);
-        $this->assertTrue($andGate->output());
-
-        return $andGate;
-    }
-
-    /**
-     * @depends testArrays
-     */
-    public function testInvokable($andGate)
-    {
-        $this->assertTrue($andGate());
-
-        return $andGate;
+        $qandGate = new Qand($a, $b);
+        $this->assertEquals($expected, $qandGate());
     }
 }
