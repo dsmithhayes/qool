@@ -54,6 +54,16 @@ abstract class Gate
     }
 
     /**
+     * Runs the `output` method by default
+     *
+     * @return bool
+     */
+    public function run()
+    {
+        return $this->output();
+    }
+
+    /**
      * I don't feel like I need to justify what this method is supposed to do.
      *
      * @return bool
